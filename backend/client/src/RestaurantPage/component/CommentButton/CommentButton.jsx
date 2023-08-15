@@ -46,12 +46,10 @@ export default function PostComment({ postId, navigate }){
         setCommentInput(e.target.value);
     }
     const onCommentSubmit = async (e) => {
-        console.log("Submit button clicked"); // Check if the function is being called
       
         if (!currentUser) {
             // if user is not logged in, redirect to login page
             e.preventDefault();
-          console.log("User is not logged in. Navigating...");
           return navigate("/login");
         } else {
             // if user is logged in, upload the content
@@ -70,7 +68,6 @@ export default function PostComment({ postId, navigate }){
                     fetchComment(postId);
                 } else {
                     alert("Failed to upload comment ");
-                    console.log(response)
                 }
             }catch(error){
                 alert("An error occured: " + error.message);

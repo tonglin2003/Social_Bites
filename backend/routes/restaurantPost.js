@@ -90,7 +90,6 @@ async function addPostTagsToTable(newPost, tagList, res){
         const tagIds = insertedTags.map((insertedTag) => insertedTag[0].id);
 
         if (tagIds.length === 0) {
-            console.log("No tags to insert.");
             return;
           }
         

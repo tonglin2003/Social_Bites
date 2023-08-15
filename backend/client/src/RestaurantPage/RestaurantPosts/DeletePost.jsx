@@ -12,9 +12,7 @@ export async function action({ params }) {
       }
     );
     if (response.ok) {
-      console.log(response);
-    //   redirect("/restaurant/1");
-    return null;
+      return null;
     }
     const { errors } = await response.json();
     return errors;

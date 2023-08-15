@@ -27,7 +27,6 @@ export default function RestaurantPost() {
     
     const response = await fetch(`/api/restaurant/${id}`);
     const restaurant = await response.json();
-    console.log(restaurant);
     setCurrentRes(restaurant);
     return restaurant;
   }
@@ -35,7 +34,6 @@ export default function RestaurantPost() {
   async function getLoggedUser() {
     const response = await fetch(`/api/auth/current_user`);
     const user = await response.json();
-    console.log(user);
     setCurrentUser(user);
     return user;
   }
@@ -45,13 +43,10 @@ export default function RestaurantPost() {
   }, [isEditing]);
 
   useEffect(() => {
-    console.log("testing be called");
     async function fetchData() {
       const loggedUser = await getLoggedUser();
       const resId = await getRestaurant(restaurantId);
-      console.log("testing");
       loggedUser.user.id === resId.UserId ? setIsCorrectUser(true) : setIsCorrectUser(false);
-      console.log(isCorrectUser);
     }
     
     fetchData();
@@ -93,7 +88,7 @@ export default function RestaurantPost() {
 
                   <div className="line" style={{marginTop: "2rem"}}></div>
 
-                  <div className="flex flex-row mt-6 mb-3">
+                  <div className="flex flex-row mt-6 items-center justify-between">
 
                     <PostComment postId={parseInt(post.id,10)} navigate={navigate}/>
 
@@ -110,7 +105,7 @@ export default function RestaurantPost() {
                     }}
                   >
                       { isCorrectUser ? <button className="mr-2">
-                  <FaTrash style={{ color: "#ef0b0b" }} />
+                  <FaTrash className='trashIcon' style={{ fontSize: "1.3em" }} />
                 </button> : null }
 
                     </fetcher.Form>

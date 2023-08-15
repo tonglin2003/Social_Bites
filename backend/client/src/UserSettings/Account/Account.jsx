@@ -30,10 +30,8 @@ export default function Account() {
 }
 
 export async function editUserAction({ request, params }) {
-  console.log("adfasd");
   let formData = await request.formData();
   let userData = Object.fromEntries(formData);
-  console.log(userData);
   const response = await fetch(`/api/user/editUser`, {
     method: "PATCH",
     headers: {

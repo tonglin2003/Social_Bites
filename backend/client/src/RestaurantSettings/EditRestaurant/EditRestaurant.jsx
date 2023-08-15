@@ -5,7 +5,7 @@ import { Form } from "react-router-dom";
 export default function EditRestaurant() {
   return (
     <div className="edit-restaurant">
-      <Form className="profile" method="patch">
+      <Form className="profileEdit" method="patch">
         <h1 className="title">Edit Restaurant</h1>
         <h2 className="sub-title">Restaurant Name</h2>
         <input
@@ -22,7 +22,7 @@ export default function EditRestaurant() {
           placeholder="1234 Laughter Lane, Giggle City, SMILE 56789"
         />
 
-        <button type="submit" className="btn">
+        <button type="submit" className="btnEdit">
           Update
         </button>
       </Form>
@@ -60,10 +60,8 @@ export default function EditRestaurant() {
 // }
 
 export async function editRestaurantAction({ request, params }) {
-  console.log("adfasd");
   let formData = await request.formData();
   let jobData = Object.fromEntries(formData);
-  console.log(jobData);
   // jobData.restaurantName;
   // jobData.address;
   const response = await fetch(`/api/restaurant/editRestaurant/${params.id}`, {

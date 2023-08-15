@@ -13,7 +13,6 @@ import { MdStorefront } from "react-icons/md";
 export async function restaurantSettingsLoader({ params }) {
   const restaurantResponse = await fetch(`/api/restaurant/${params.id}`);
   const restaurant = await restaurantResponse.json();
-  // console.log(restaurant);
   return { restaurant };
 }
 

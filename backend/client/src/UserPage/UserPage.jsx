@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import "./UserPageStyle.css";
 import { FaCameraRetro, FaStar, FaPlus } from "react-icons/fa";
 import { GiFoodTruck } from "react-icons/gi";
@@ -14,6 +14,8 @@ export default function UserPage() {
   const [current, setCurrentUser] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
   const [loadingData, setLoadingData] = useState(true);
+
+  const location = useLocation();
   
   let { id } = useParams();
   async function getUser(userId) {
@@ -38,7 +40,6 @@ export default function UserPage() {
     const response = await fetch(`/api/user/restaurants/${id}`);
     const myRestaurants = await response.json();
     setRestaurants(myRestaurants);
-    console.log("API Response:", myRestaurants);
     return myRestaurants;
   }
 
@@ -115,7 +116,6 @@ async function hasRestaurantEdit(bool) {
       const user = await getUser(id);
       const currentuse = await getLoggedUser();
   
-      console.log(currentuse);
       setUserInfo(user);
       setCurrentUser(currentuse);
   
@@ -124,7 +124,6 @@ async function hasRestaurantEdit(bool) {
   
         const myRes = await getRestaurants(id);
         setRestaurants(myRes);
-        console.log(myRes);
   
         if (!Array.isArray(myRes) && !currentuse.user.hasRestaurant) {
           await hasRestaurantEdit(true);
@@ -208,7 +207,7 @@ async function hasRestaurantEdit(bool) {
               <div className="break-right" />
             </div>
             <div className="profile-reviews flex flex-col items-start p-7 pt-1">
-              <h1 className="review-title-name">Reviews</h1>
+              {location.pathname === `/user/${id}` ? <h1 className="review-title-name">Reviews</h1> : <h1 className="review-title-name">Restaurants</h1> }
               <p>Sort by: Options here</p>
               <div className="review-boxes gap-6">
                 <div className="review-box">

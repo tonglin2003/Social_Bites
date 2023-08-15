@@ -5,7 +5,6 @@ import React, { useState, useEffect } from "react";
 
 export default function RestaurantReviews() {
   const reviews = useLoaderData();
-  console.log(reviews);
   
 
   const [userInfo, setUserInfo] = useState(null);
@@ -38,7 +37,6 @@ export default function RestaurantReviews() {
       try {
           const response = await fetch(`/api/user/get_user/${Id}`);
           const restaurant = await response.json();
-          console.log(restaurant);
           return restaurant;
       } catch (error) {
           console.error("Error fetching user:", error);
@@ -60,7 +58,6 @@ export default function RestaurantReviews() {
   
   const list = await Promise.all(reviews.map(async (item, index) => {
       const userInf = await getUser(item.UserId);  // Assuming each review has a restaurantId
-      console.log(userInf);
       return (
         <>
           <div className="review-box w-full mb-2">
@@ -120,7 +117,6 @@ export default function RestaurantReviews() {
 }
 
 export const reviewsLoader = async (restaurantId) => {
-  console.log(restaurantId.params.restaurantId);
   const res = await fetch(`/api/review/${restaurantId.params.restaurantId}`);
   return res.json();
 };

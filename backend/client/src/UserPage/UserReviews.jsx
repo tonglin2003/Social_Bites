@@ -34,7 +34,6 @@ export default function UserReviews () {
         try {
             const response = await fetch(`/api/restaurant/${Id}`);
             const restaurant = await response.json();
-            console.log(restaurant);
             return restaurant;
         } catch (error) {
             console.error("Error fetching user:", error);
@@ -65,7 +64,6 @@ export default function UserReviews () {
               }
             );
             if (response.ok) {
-                console.log(response);
                 await mapReviews();  // Re-fetch the reviews after a successful delete
             } else {
                 const { errors } = await response.json();

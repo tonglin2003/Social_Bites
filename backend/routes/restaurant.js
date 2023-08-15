@@ -100,7 +100,6 @@ async function fetchRestaurantLatLng(address) {
       const longitude = result.geometry.location.lng;
       return { latitude, longitude };
     } else {
-      console.log("No results found in API response.");
       return null;
     }
   } catch (error) {
@@ -118,7 +117,6 @@ router.patch(
     const restaurantId = parseInt(req.params.restaurantId, 10);
     let latLng = null;
 
-    console.log(restaurantId);
 
     try {
       // fetch for restaurant in the db
@@ -176,9 +174,7 @@ router.patch(
 router.post("/", autheticateUser, async (req, res) => {
     try {
         // Find the latitude and longitude of the restaurant based on the address given
-        console.log("fetching.......")
         const latLng = await fetchRestaurantLatLng(req.body.address);
-        console.log("Finishing fetching")
     
         // Check if latLng is fetched successfully
         if (!latLng) {

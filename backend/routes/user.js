@@ -88,7 +88,6 @@ router.get("/restaurants/:userId", async (req, res)=>{
 });
 
 router.get("/get_user/:userId", async(req, res)=>{
-    console.log("Attempting to fetch user:", req.params.userId);
     const userId = parseInt(req.params.userId,10);
     
 

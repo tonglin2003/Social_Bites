@@ -28,7 +28,6 @@ export default function DeleteRestaurant() {
 }
 
 export async function deleteAction({ request, params }) {
-  console.log(params);
   const response = await fetch(`/api/restaurant/${params.id}`, {
     method: "DELETE",
   });

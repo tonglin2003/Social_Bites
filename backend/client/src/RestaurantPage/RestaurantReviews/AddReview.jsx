@@ -9,8 +9,7 @@ import {
   export async function action({ request, params }) {
     let formData = await request.formData();
     let postData = Object.fromEntries(formData);
-    console.log(postData);
-    console.log(params.restaurantId)
+
     try {
       // /api/restaurants/1/posts
       const response = await fetch(
@@ -25,7 +24,6 @@ import {
       );
       let url = `/restaurant/${params.restaurantId}`;
       if (response.ok) {
-        console.log(response);
         return redirect(url);
       }
       const { errors } = await response.json();

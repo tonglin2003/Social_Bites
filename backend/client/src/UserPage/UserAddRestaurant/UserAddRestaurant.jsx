@@ -21,7 +21,7 @@ export default function UserAddRestaurant() {
           type="text"
           placeholder="1234 Laughter Lane, Giggle City, SMILE 56789"
         />
-        <button type="submit" className="btn">
+        <button type="submit" className="btnAdd">
           Add
         </button>
       </Form>
@@ -30,7 +30,6 @@ export default function UserAddRestaurant() {
 }
 
 export async function userAddRestaurantAction({ request, params }) {
-  console.log("adfasd");
   let formData = await request.formData();
   let jobData = Object.fromEntries(formData);
   const response = await fetch("/api/restaurant", {

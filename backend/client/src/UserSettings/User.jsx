@@ -8,19 +8,11 @@ import { FaUserAlt, FaTag } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 
 export async function userSettingsLoader({ params }) {
-  console.log(params);
   const userResponse = await fetch(`/api/user/get_user/${params.id}`);
-  console.log(userResponse);
   const user = await userResponse.json();
   return { user };
 }
 
-// export async function restaurantSettingsLoader({ params }) {
-//   const restaurantResponse = await fetch(`/api/restaurant/${params.id}`);
-//   const restaurant = await restaurantResponse.json();
-//   // console.log(restaurant);
-//   return { restaurant };
-// }
 
 export default function UserSettings() {
   const { user } = useLoaderData();
