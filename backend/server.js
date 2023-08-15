@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 4000;
 const session = require("express-session");
@@ -53,13 +54,14 @@ app.use("/api/tag", tagRouter);
 app.use("/api/restaurant_post", restauarantPostRouter);
 app.use("/api/review", reviewRouter);
 
+app.use(express.static(path.join(__dirname, "client/dist")));
 
-
-app.get('/', (req, res)=>{
-    res.send('Testing for the node!!!');
-})
-
-app.listen(port, ()=>{
-    console.log(`Server is running at http://localhost:${port}`);
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/dist", "index.html"));
 });
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running at http://localhost:${process.env.PORT}`);
+  });
 
