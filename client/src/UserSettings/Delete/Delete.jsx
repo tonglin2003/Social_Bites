@@ -27,10 +27,4 @@ export default function Delete() {
   );
 }
 
-export async function deleteUserAction({ request, params }) {
-  const response = await fetch(`/api/user/delete_user_account/`, {
-    method: "DELETE",
-  });
 
-  return redirect("/");
-}

@@ -15,7 +15,8 @@ import AboutApp from "./AboutApp/AboutApp";
 import RestaurantPage from "./RestaurantPage/RestaurantPage";
 import User, { userSettingsLoader } from "./UserSettings/User";
 import Account, { editUserAction } from "./UserSettings/Account/Account";
-import Delete, { deleteUserAction } from "./UserSettings/Delete/delete";
+import Delete from "./UserSettings/Delete/Delete";
+import { deleteUserAction } from "./UserSettings/Delete/DeleteAction";
 import UserPage from "./UserPage/UserPage";
 import RestaurantReviews, {
   reviewsLoader,
