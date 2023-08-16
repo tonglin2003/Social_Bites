@@ -39,6 +39,5 @@ export async function userAddRestaurantAction({ request, params }) {
     },
     body: JSON.stringify(jobData),
   });
-
   return redirect("/");
 }
