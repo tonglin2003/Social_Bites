@@ -5,15 +5,25 @@ Social Bites is a full-stack web application developed using the PERN stack (Pos
 
 
 ## Features:
-Restaurant Promotion: Discover the latest restaurant events, deals, and special offers in your area.
-Community Engagement: Connect with fellow food enthusiasts, plan events, and share honest restaurant reviews.
-Interactive Interface: Enjoy an intuitive and user-friendly interface designed for seamless navigation.
-Real-time Updates: Stay informed about restaurant activities and events with real-time notifications.
+- Restaurant Promotion: Discover the latest restaurant events, deals, and special offers in your area.
+- Community Engagement: Connect with fellow food enthusiasts, plan events, and share honest restaurant reviews.
+- Interactive Interface: Enjoy an intuitive and user-friendly interface designed for seamless navigation.
+- Real-time Updates: Stay informed about restaurant activities and events with real-time notifications.
+- Find a nearby restaurant: Google API is used to find nearby restaurants for the user.
+
+#### Here are some images for the website:
+The main page you will see when you enter the website. 
+<img width="1356" alt="Screen Shot 2023-10-06 at 3 40 03 PM" src="https://github.com/tonglin2003/Social_Bites/assets/91768176/6c026904-5899-4fbf-b26d-8e4e161c3d8b">
+
+Display of all events by restaurants.
+<img width="1465" alt="Screen Shot 2023-10-06 at 3 42 03 PM" src="https://github.com/tonglin2003/Social_Bites/assets/91768176/eb0296c8-cf33-47d6-9a91-3a0925646781">
+
+There are more functions to explore on the website! [Social Bites](https://social-bites.com/)
 
 
 
 ### Step to setup a backend
-1. inside the terminal enter the folling:
+1. inside the terminal enter the following:
 ```
 npm install express
 npm install nodemon
