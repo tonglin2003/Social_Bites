@@ -1,3 +1,17 @@
+# Social Bites
+Social Bites is a full-stack web application developed using the PERN stack (PostgreSQL, Express.js, React.js, and Node.js) that I developed with three other amazing developers. It is designed to provide a platform for users to explore, connect, and engage with restaurants in a unique way. 
+
+#### You can find this project deployed for demonstration purposes at [Social Bites](https://social-bites.com/).
+
+
+## Features:
+Restaurant Promotion: Discover the latest restaurant events, deals, and special offers in your area.
+Community Engagement: Connect with fellow food enthusiasts, plan events, and share honest restaurant reviews.
+Interactive Interface: Enjoy an intuitive and user-friendly interface designed for seamless navigation.
+Real-time Updates: Stay informed about restaurant activities and events with real-time notifications.
+
+
+
 ### Step to setup a backend
 1. inside the terminal enter the folling:
 ```
